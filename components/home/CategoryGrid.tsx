@@ -5,7 +5,7 @@ const categories = [
   {
     name: 'Tops',
     slug: 'tops',
-    image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&h=600&fit=crop',
   },
   {
     name: 'Bottoms',
@@ -38,9 +38,10 @@ export default function CategoryGrid() {
             >
               <Image
                 src={category.image}
-                alt={category.name}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                alt={category.slug === 'tops' ? 'Assorted folded shirts' : category.name}
+                width={800}
+                height={600}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
               <div className="absolute inset-0 flex items-center justify-center">

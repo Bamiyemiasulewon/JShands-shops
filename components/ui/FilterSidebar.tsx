@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { X, ChevronDown, ChevronUp } from 'lucide-react'
 
+type FilterKey = 'category' | 'size' | 'color' | 'priceRange' | 'sort'
+
 interface FilterSidebarProps {
   isOpen: boolean
   onClose: () => void
@@ -13,7 +15,7 @@ interface FilterSidebarProps {
     priceRange: [number, number]
     sort: string
   }
-  onFilterChange: (key: string, value: any) => void
+  onFilterChange: (key: FilterKey, value: string | [number, number]) => void
   activeFilters: string[]
   onRemoveFilter: (filter: string) => void
 }
@@ -50,14 +52,16 @@ export default function FilterSidebar({
     sort: false,
   })
 
-  const toggleSection = (section: string) => {
+  type SectionKey = keyof typeof expandedSections
+
+  const toggleSection = (section: SectionKey) => {
     setExpandedSections(prev => ({
       ...prev,
       [section]: !prev[section],
     }))
   }
 
-  const FilterSection = ({ title, children, sectionKey }: { title: string; children: React.ReactNode; sectionKey: string }) => (
+  const FilterSection = ({ title, children, sectionKey }: { title: string; children: React.ReactNode; sectionKey: SectionKey }) => (
     <div className="border-b border-gray-200 pb-4 mb-4">
       <button
         onClick={() => toggleSection(sectionKey)}

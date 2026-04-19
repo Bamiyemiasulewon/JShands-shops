@@ -17,20 +17,6 @@ export interface Product {
 export const products: Product[] = [
   // Tops (6)
   {
-    id: '1',
-    slug: 'silk-blouse',
-    name: 'Silk Blouse',
-    category: 'tops',
-    price: 250,
-    colors: [{ hex: '#FFFFFF', label: 'White' }, { hex: '#000000', label: 'Black' }],
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: ['https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&h=1000&fit=crop', 'https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=800&h=1000&fit=crop'],
-    description: 'Elegant silk blouse with delicate detailing.',
-    details: 'Made from 100% silk. Dry clean only.',
-    isNew: true,
-    isBestseller: false,
-  },
-  {
     id: '2',
     slug: 'cashmere-sweater',
     name: 'Cashmere Sweater',
@@ -156,20 +142,6 @@ export const products: Product[] = [
     details: '100% linen. Machine wash.',
     isNew: false,
     isBestseller: false,
-  },
-  {
-    id: '11',
-    slug: 'leather-pants',
-    name: 'Leather Pants',
-    category: 'bottoms',
-    price: 550,
-    colors: [{ hex: '#000000', label: 'Black' }],
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: ['https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=1000&fit=crop', 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=1000&fit=crop'],
-    description: 'Premium leather pants with sleek design.',
-    details: 'Genuine leather. Professional clean only.',
-    isNew: false,
-    isBestseller: true,
   },
   {
     id: '12',
